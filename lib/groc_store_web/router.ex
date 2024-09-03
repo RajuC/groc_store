@@ -14,17 +14,23 @@ defmodule GrocStoreWeb.Router do
     plug :accepts, ["json"]
   end
 
-  # scope "/", GrocStoreWeb do
+  scope "/", GrocStoreWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    get "/", HomeController, :home
+    # get "/customers", CustomerController, :index
+    # get "/customers/:id", CustomerController, :show
+    resources "/customers", CustomerController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
   scope "/api", GrocStoreWeb do
     pipe_through :api
 
-    
+    #### customer apis
+    resources "/customers", CustomerController, except: [:new, :edit]
+
+
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development

@@ -3,7 +3,7 @@ defmodule GrocStore.Repo.Migrations.CreateCustomers do
 
   def change do
     create table(:customers) do
-      add :customer_id, :integer
+      add :customer_id, :string
       add :first_name, :string
       add :last_name, :string
       add :email, :string

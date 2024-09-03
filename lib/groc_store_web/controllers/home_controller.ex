@@ -1,4 +1,4 @@
-defmodule GrocStoreWeb.PageController do
+defmodule GrocStoreWeb.HomeController do
   use GrocStoreWeb, :controller
 
   def home(conn, _params) do

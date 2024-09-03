@@ -6,12 +6,12 @@ defmodule GrocStore.Accounts.Customer do
     field :state, :string
     field :zip, :integer
     field :password, :string
-    field :customer_id, :integer
+    field :customer_id, :string
     field :first_name, :string
     field :last_name, :string
     field :email, :string
     field :address_one, :string
-    field :address_two, :string
+    field :address_two, :string, default: "NA"
     field :city, :string
     field :phone_number, :string
 

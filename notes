@@ -1,6 +1,8 @@
 contexts
 mix phx.gen.context Accounts Customer customers customer_id:integer first_name:string last_name:string email:string password:string address_one:string address_two:string city:string state:string zip:integer phone_number:string
 
+mix phx.gen.json Accounts Customer customers customer_id:integer first_name:string last_name:string email:string password:string address_one:string address_two:string city:string state:string zip:integer phone_number:string
+
 
 
 

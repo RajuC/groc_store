@@ -1,4 +1,4 @@
-defmodule GrocStoreWeb.PageControllerTest do
+defmodule GrocStoreWeb.HomeControllerTest do
   use GrocStoreWeb.ConnCase
 
   test "GET /", %{conn: conn} do

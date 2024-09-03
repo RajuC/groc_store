@@ -1,0 +1,62 @@
+
+
+
+
+<table>
+    <tr>
+        <td class="text-brand px-2 font-medium">Serial Number</td>
+        <td><%= @customer.id %></td>
+    </tr>
+    <tr>
+        <td class="text-brand px-2 font-medium">Name</td>
+        <td><%= @customer.first_name %> <%= @customer.last_name %></td>
+    </tr>
+    <tr>
+        <td class="text-brand px-2 font-medium">User ID</td>
+        <td><%= @customer.customer_id %></td>
+    </tr>
+    <tr>
+        <td class="text-brand px-2 font-medium">Address</td>
+        <td><%= @customer.address_one %>
+            <%= if @customer.address_two != "NA", do: @customer.address_two %>
+            <%!-- <%= if assigns[:@customer.address_two] != "NA" do %>
+                <%= @@customer.address_two %>
+            <%end %> --%>
+            <%= @customer.city %>
+            <%= @customer.state %>
+            <%= @customer.zip %>
+        </td>
+    </tr>
+    <tr>
+        <td class="text-brand px-2 font-medium">Phone Number</td>
+        <td><%= @customer.phone_number %></td>
+    </tr>
+    <tr>
+        <td class="text-brand px-2 font-medium">Registered Date</td>
+        <td><%= @customer.inserted_at %></td>
+    </tr>
+
+</table>
+
+
+<div class="flex">
+    <div class="w-full sm:w-auto">
+    <div class="mt-10 grid grid-cols-1 gap-x-3 gap-y-1 sm:grid-cols-3">
+        <a
+        href={~p"/customers"}
+        class="group relative rounded-1xl px-2 py-2 text-sm font-semibold leading-1 text-zinc-900 sm:py-6"
+        >
+        <span class="absolute inset-0 rounded-2xl bg-zinc-200 transition group-hover:bg-zinc-100 sm:group-hover:scale-105">
+        </span>
+        <span class="relative flex items-center gap-2 sm:flex-col">
+            Back to Customers
+        </span>
+        </a>
+    </div>
+    </div>
+</div>
+
+
+
+
+

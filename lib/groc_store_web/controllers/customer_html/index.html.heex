@@ -1,0 +1,29 @@
+<h1 class="text-lg text-brand">
+     Customer Accounts
+</h1>
+
+<h1 class="text-lg text-brand">
+     Add  Cystomer
+    <a href={~p"/customers/#{customer.id}"}>
+        <%= customer.customer_id%>
+    </a>
+</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>User Name</th>
+    </tr>
+    <%= for customer <- @customers do %>
+        <tr>
+            <td><%= customer.id%></td>
+            <td class="text-brand px-2 font-medium" >
+                <a href={~p"/customers/#{customer.id}"}>
+                    <%= customer.customer_id%>
+                </a>
+            </td>
+            <td><%= customer.first_name %> <%= customer.last_name %></td>
+        </tr>
+    <% end %>
+</table>
