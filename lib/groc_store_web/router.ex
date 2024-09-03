@@ -20,7 +20,7 @@ defmodule GrocStoreWeb.Router do
     get "/", HomeController, :home
     # get "/customers", CustomerController, :index
     # get "/customers/:id", CustomerController, :show
-    resources "/customers", CustomerController, except: [:new, :edit]
+    resources "/customers", CustomerController
   end
 
   # Other scopes may use custom stacks.
@@ -28,7 +28,9 @@ defmodule GrocStoreWeb.Router do
     pipe_through :api
 
     #### customer apis
-    resources "/customers", CustomerController, except: [:new, :edit]
+    post "/customers", CustomerController, :create_customer
+    get "/customers", CustomerController, :index
+    get "/customers/:id", CustomerController, :show
 
 
   end

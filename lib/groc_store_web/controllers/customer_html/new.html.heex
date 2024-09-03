@@ -2,20 +2,4 @@
     New Customer
 </h1>
 
-<.simple_form :let={f} for={@changeset} action={~p"/customers"}>
-    <.error :if={@changeset.action}>
-        Oops, something went wrong! Please check the errors below.
-    </.error>
-    <.input field={f[:first_name]} type="text" label="First Name" />
-     <.input field={f[:last_name]} type="text" label="Last Name" />
-     <.input field={f[:customer_id]} type="text" label="User Name" />
-     <.input field={f[:phone_number]} type="text" label="Phone Number" />
-     <.input field={f[:address_one]} type="text" label="Primary Address" />
-     <.input field={f[:address_two]} type="text" label="Secondary Address(optional)" />
-     <.input field={f[:city]} type="text" label="City" />
-     <.input field={f[:state]} type="integer" label="State" />
-     <.input field={f[:zip]} type="text" label="Zip Code" />
-    <:actions>
-        <.button>Submit</.button>
-    </:actions>
-</.simple_form>
+<.customer_form changeset={@changeset} action={~p"/customers"} />

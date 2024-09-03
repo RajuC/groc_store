@@ -39,24 +39,34 @@
 </table>
 
 
-<div class="flex">
-    <div class="w-full sm:w-auto">
-    <div class="mt-10 grid grid-cols-1 gap-x-3 gap-y-1 sm:grid-cols-3">
-        <a
-        href={~p"/customers"}
+<ul class="py-2">
+    <li>
+        <.link navigate={~p"/customers/"}><.button>Back to Customers List</.button></.link>
+    </li>
+    <li>
+        <.link navigate={~p"/customers/#{@customer.id}/edit"}><.button>Edit</.button></.link>
+    </li>
+    <li>
+        <.link href={~p"/customers/#{@customer.id}"} method="delete" data-confirm="Are you sure?">
+         <.button>Delete</.button>
+        </.link>
+    </li>
+</ul>
+
+
+    <%!-- <div class="flex">
+            <a href={~p"/customers"}
         class="group relative rounded-1xl px-2 py-2 text-sm font-semibold leading-1 text-zinc-900 sm:py-6"
         >
-        <span class="absolute inset-0 rounded-2xl bg-zinc-200 transition group-hover:bg-zinc-100 sm:group-hover:scale-105">
-        </span>
-        <span class="relative flex items-center gap-2 sm:flex-col">
-            Back to Customers
-        </span>
-        </a>
+      <.button>Back to Customers List</.button>
+      </a>
     </div>
-    </div>
-</div>
 
-
-
-
+        <div class="flex">
+            <a href={~p"/customers/#{@customer.id}"}
+        class="group relative rounded-1xl px-2 py-2 text-sm font-semibold leading-1 text-zinc-900 sm:py-6"
+        >
+      <.button>Edit</.button>
+      </a>
+    </div> --%>
 
